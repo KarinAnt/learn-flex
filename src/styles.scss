@@ -1,0 +1,102 @@
+$bg-color1: #343a40;
+$bg-color2: #007bff;
+$color1:#fff;
+$color2:#000;
+@mixin divs {
+    width: 85%;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+@mixin fs($fs, $lh, $c) {
+    font-size: $fs;
+    line-height: $lh;
+    color: $c;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    // position: fixed;
+}
+.con{
+    width: 100%;
+}
+.con{
+    >div{
+       @include divs;   
+    }
+}
+.bg1{
+    background-color: $bg-color1;
+    color: $color1;
+    font-size: 18px;
+}
+.bg2{
+    background-color: $bg-color2;
+    padding: 70px 0;
+    >div{
+        flex-direction: column;
+        >p:nth-child(1){
+            @include fs(4em, auto, #fff);
+            margin-bottom: 20px;
+        }
+        >p:nth-child(2){
+            @include fs(20px, 30px, silver);
+        }
+    }
+}
+.ul{
+    list-style: none;
+    display: flex;
+    width:300px;
+    justify-content: space-between;
+    li{
+        color: silver;
+    }
+    li:nth-child(1){
+        color:$color1;
+    }
+}
+button{
+    background-color: $bg-color2;
+    color: $color1;
+    padding: 13px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.pb{
+    font-size: 2em;
+    font-weight: bold;
+    border-bottom: 1px solid silver;
+}
+.ds{
+    >p{
+        margin:20px 0;
+    }
+}
+.ds:nth-child(1){
+    width: 67%;
+}
+.ds:nth-child(2){
+    width: 30%;
+    >p:nth-child(2){
+        font-weight: bold;
+    }
+}
+span{
+    color: $bg-color2;
+}
+
+
+
+@media screen and (max-width: 800px){
+    .ds{
+        width: 100%!important;
+    }
+}
